@@ -44,12 +44,21 @@
  */
 class Migrasi_2105_ke_2106 extends MY_model
 {
+
 	public function up()
 	{
 		$hasil = true;
+		
+		// Migrasi fitur premium
+		$hasil = true;
+
+		// Migrasi fitur premium
+		$migrasi = 'migrasi_fitur_premium_2012';
+		$this->load->model('migrations/'.$migrasi);
+		$hasil =& $this->$migrasi->up();
 
 		status_sukses($hasil);
-
 		return $hasil;
 	}
+
 }
